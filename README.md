@@ -37,6 +37,7 @@ Notepad Studio Lite is a client-side application. It does not require an account
 
 - The app autosaves its workspace in the current browser's local storage.
 - Documents stored in browser storage are tied to that browser profile and origin.
+- File-system handles used by **Open** and **Save** are session-only. After a reload, documents are restored from browser storage, but you must open or associate the files again.
 - Clearing browser site data, using private browsing, or switching browsers/profiles can make locally stored work unavailable.
 - Use **Back up workspace** regularly to export a portable JSON backup.
 - Opening, saving, and exporting files involves the file or download actions you explicitly initiate in your browser.
@@ -47,21 +48,24 @@ Notepad Studio Lite is a client-side application. It does not require an account
 
 | Shortcut | Action |
 |---|---|
+| Ctrl+Alt+N | New document |
 | Ctrl+O | Open file |
 | Ctrl+S | Save to the linked file |
 | Ctrl+Shift+S | Save As |
 | Ctrl+F | Find and replace |
+| F3 / Shift+F3 | Next / previous search match |
 | Ctrl+Shift+F | Search all documents |
-| Ctrl+Alt+N | New document |
-| Ctrl+Alt+D | Duplicate document |
 | Ctrl+G | Go to line |
-| F2 | Rename |
+| Ctrl+Alt+D | Duplicate document |
+| F2 | Rename document |
+| Alt+W | Close document |
+| Ctrl+Alt+1–9 | Switch to tab |
+| Alt+Shift+← / → | Move current tab |
+| Tab / Shift+Tab | Indent / outdent the current line |
 | Ctrl+Shift+P | Open command palette |
-| F3 | Next search match |
-| Shift+F3 | Previous search match |
-| Esc | Close the active search/overlay |
+| Esc | Close search, dialog, or drawer |
 
-On macOS, browser and application shortcut handling may differ because the app's documented shortcuts use Ctrl-based combinations.
+These are the shortcuts displayed by the app. Browser and operating-system shortcut handling can vary.
 
 ## File operations
 
@@ -72,6 +76,8 @@ On macOS, browser and application shortcut handling may differ because the app's
 - **Import:** loads text content into the workspace.
 - **Back up workspace:** downloads a JSON file containing the workspace data and settings.
 - **Restore backup:** restores workspace data from a previously created JSON backup. Treat restore as a replacement operation and keep a separate backup before using it.
+
+The native open/import workflow accepts common text-oriented formats including TXT, TEXT, MD, MARKDOWN, LOG, JSON, and CSV. Individual text files are limited to 8 MiB by the app.
 
 The File System Access API is used where available. Browser support and permission rules vary, so file operations may use conventional file-picker and download fallbacks instead.
 
