@@ -119,4 +119,4 @@ For proposed code changes, preserve the single-file distribution unless the proj
 
 ## License
 
-This project is licensed under the MIT License. See [LICENSE](LICENSE).
+This project is licensed under the MIT License and if **free** to use . See [LICENSE](LICENSE).
